@@ -15,15 +15,10 @@ class CalculatorTest {
     }
 
 
-//   musi być taki zapis bo assertAll korzysta z interfejsu funkcyjnego Executable,
-//   który nic nie przyjmuje i nic nie zwraca- wtedy drukuje wszystkie testy fail
+
     @Test
     void assertionTest(){
-        Assertions.assertAll(
-                ()->  Assertions.assertEquals("test1","test1", ()-> "my custom message 1"),
-                ()->  Assertions.assertEquals("test1","test2", ()-> "my custom message 2"),
-                ()->  Assertions.assertEquals("test1","test3", ()-> "my custom message 3")
-);
+
     }
 
 //    jak asercja nie przejdzie to drukuje wiadomość failure message
@@ -32,26 +27,18 @@ class CalculatorTest {
         return "failure message";
     }
 
-
-
-
-
-
-
+//test przeszedł nic nie drukuje więc został wyrzucony wyjątek
 
     @Test
-
-    void add() {
+    void testCalculator() {
 //    given
-        int left = 5;
-        int right = 3;
-        Integer expected = 8;
+        String left = "4";
+        String right = "zajavka";
 
 //    when
-        Integer result = Calculator.add(left, right);
 
 //    then
-        Assertions.assertEquals(expected, result);
+        Assertions.assertThrows(NumberFormatException.class,() ->  calculator.add(left, right)) ;
 
     }
 
