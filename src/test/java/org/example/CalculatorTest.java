@@ -1,12 +1,36 @@
 package org.example;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
+
+    //    stosowana gdy zawsze coś się powtarza jakaś częśc kodu- to działa raz i afterAll również
+    @BeforeAll
+    static void beforeAll() {
+        System.out.println("before all..");
+
+
+    }
+
+    //        Before Each nie jest już satyczne
+    @BeforeEach
+    void beforeEach() {
+        System.out.println("before each...");
+    }
+
+    @AfterAll
+    static void afterAll() {
+        System.out.println("after all...");
+
+
+    }
+
+    @AfterEach
+    void afterEach(){
+        System.out.println("after each...");
+    }
 
     @Test
     @DisplayName("metoda add własna nazwa")
@@ -15,12 +39,13 @@ class CalculatorTest {
         int left = 5;
         int right = 3;
         Integer expected = 8;
-
+        System.out.println("add");
 //    when
         Integer result = Calculator.add(left, right);
 
 //    then
-        Assertions.assertEquals(expected,result);
+        Assertions.assertEquals(expected, result);
+
     }
 
     @Test
@@ -34,7 +59,8 @@ class CalculatorTest {
         Integer result = Calculator.subtract(left, right);
 
 //    then
-        Assertions.assertEquals(expected,result);
+        Assertions.assertEquals(expected, result);
+        System.out.println("subtract");
     }
 
     @Test
@@ -48,7 +74,8 @@ class CalculatorTest {
         Integer result = Calculator.multiply(left, right);
 
 //    then
-        Assertions.assertEquals(expected,result);
+        Assertions.assertEquals(expected, result);
+        System.out.println("multiply");
     }
 
     @Test
@@ -62,7 +89,8 @@ class CalculatorTest {
         Integer result = Calculator.divide(left, right);
 
 //    then
-        Assertions.assertEquals(expected,result);
+        Assertions.assertEquals(expected, result);
+        System.out.println("divide");
     }
 
 
