@@ -6,42 +6,37 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
     private Calculator calculator;
-    //    stosowana gdy zawsze coś się powtarza jakaś częśc kodu- to działa raz i afterAll również
-    @BeforeAll
-    static void beforeAll() {
-        System.out.println("before all..");
 
 
-    }
-
-    //        Before Each nie jest już satyczne
-//    dzięki takiemu zapisowi nie musimy tego pisać 4 razy
     @BeforeEach
     void beforeEach() {
-        System.out.println("before each...");
+
        calculator = new Calculator();
     }
 
-    @AfterAll
-    static void afterAll() {
-        System.out.println("after all...");
-
-
+//    jeśli test fail to następny nie jest uruchamiany
+    @Test
+    void assertionTest(){
+        Assertions.assertEquals(1,1);
+        Assertions.assertEquals(1,3);
+        Assertions.assertEquals(1,2);
     }
 
-    @AfterEach
-    void afterEach(){
-        System.out.println("after each...");
-    }
+
+
+
+
+
+
 
     @Test
-    @DisplayName("metoda add własna nazwa")
+
     void add() {
 //    given
         int left = 5;
         int right = 3;
         Integer expected = 8;
-        System.out.println("add");
+
 //    when
         Integer result = Calculator.add(left, right);
 
@@ -62,7 +57,7 @@ class CalculatorTest {
 
 //    then
         Assertions.assertEquals(expected, result);
-        System.out.println("subtract");
+
     }
 
     @Test
@@ -77,7 +72,7 @@ class CalculatorTest {
 
 //    then
         Assertions.assertEquals(expected, result);
-        System.out.println("multiply");
+
     }
 
     @Test
@@ -92,7 +87,7 @@ class CalculatorTest {
 
 //    then
         Assertions.assertEquals(expected, result);
-        System.out.println("divide");
+
     }
 
 
