@@ -17,10 +17,11 @@ class CalculatorTest {
 //    jeśli test fail to następny nie jest uruchamiany
     @Test
     void assertionTest(){
-        Assertions.assertEquals(1,1,createMessage(1));
+        Assertions.assertEquals(1,2,createMessage(1));
 
     }
 
+//    jak asercja nie przejdzie to drukuje wiadomość failure message
     private String createMessage(int param){
         System.out.println("message creation "+ param);
         return "failure message";
