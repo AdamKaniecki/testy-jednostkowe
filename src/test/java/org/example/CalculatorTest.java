@@ -17,7 +17,7 @@ class CalculatorTest {
 
     @Test
     void assertionTest(){
-        Assertions.assertTrue(true);
+        Assertions.assertNotNull("coś");
 
     }
 
