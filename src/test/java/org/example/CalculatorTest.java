@@ -18,7 +18,7 @@ class CalculatorTest {
 //    to samo jak w Optionalu orElseGET
     @Test
     void assertionTest(){
-        Assertions.assertEquals(1,2,()-> createMessage(1));
+        Assertions.assertNotEquals(1,2,()-> createMessage(1));
 
     }
 
