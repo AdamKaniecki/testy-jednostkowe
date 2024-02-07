@@ -15,9 +15,12 @@ class CalculatorTest {
     }
 
 
+//    1 test przejdzie, 2 test fail i ()-> "my custom message 2"
     @Test
     void assertionTest(){
-        Assertions.assertNotNull("coś");
+        Assertions.assertEquals("test1","test1", ()-> "my custom message 1");
+        Assertions.assertEquals("test1","test2", ()-> "my custom message 2");
+        Assertions.assertEquals("test1","test3", ()-> "my custom message 3");
 
     }
 
