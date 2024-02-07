@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
-
+    private Calculator calculator;
     //    stosowana gdy zawsze coś się powtarza jakaś częśc kodu- to działa raz i afterAll również
     @BeforeAll
     static void beforeAll() {
@@ -15,9 +15,11 @@ class CalculatorTest {
     }
 
     //        Before Each nie jest już satyczne
+//    dzięki takiemu zapisowi nie musimy tego pisać 4 razy
     @BeforeEach
     void beforeEach() {
         System.out.println("before each...");
+       calculator = new Calculator();
     }
 
     @AfterAll
