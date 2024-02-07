@@ -14,11 +14,11 @@ class CalculatorTest {
        calculator = new Calculator();
     }
 
-//    jeśli mam supliera i test przechodzi to nic nie drukuje
+//    jeśli mam supliera i test przechodzi to nic nie drukuje a jak jest fail to drukuje createMessage
 //    to samo jak w Optionalu orElseGET
     @Test
     void assertionTest(){
-        Assertions.assertEquals(1,1,()-> createMessage(1));
+        Assertions.assertEquals(1,2,()-> createMessage(1));
 
     }
 
