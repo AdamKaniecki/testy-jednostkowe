@@ -2,7 +2,7 @@ package org.example;
 
 public class Calculator {
 
-    public static int add(String left, String right){
+    public  int add(String left, String right){
         return Integer.parseInt(left) + Integer.parseInt(right);
     }
     public static int subtract(int left, int right){

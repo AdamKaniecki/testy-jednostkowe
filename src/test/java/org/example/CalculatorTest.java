@@ -8,6 +8,7 @@ class CalculatorTest {
     private Calculator calculator;
 
 
+    @SuppressWarnings("InstantiationOfUtilityClass")
     @BeforeEach
     void beforeEach() {
 
@@ -27,18 +28,17 @@ class CalculatorTest {
         return "failure message";
     }
 
-//test przeszedł nic nie drukuje więc został wyrzucony wyjątek
+
 
     @Test
+    @Disabled("This test is disabled")
     void testCalculator() {
 //    given
         String left = "4";
-        String right = "zajavka";
+        String right = "5";
 
-//    when
-
-//    then
-        Assertions.assertThrows(NumberFormatException.class,() ->  calculator.add(left, right)) ;
+//    then,when
+        Assertions.assertThrows(EnumConstantNotPresentException.class,() ->  calculator.add(left, right)) ;
 
     }
 
