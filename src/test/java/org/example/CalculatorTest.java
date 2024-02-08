@@ -1,6 +1,8 @@
 package org.example;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +10,7 @@ class CalculatorTest {
     private Calculator calculator;
 
 
-    @SuppressWarnings("InstantiationOfUtilityClass")
+
     @BeforeEach
     void beforeEach() {
 
@@ -17,29 +19,28 @@ class CalculatorTest {
 
 
 
-    @Test
-    void assertionTest(){
+//do testów parametryzowanych wchodzą dane, czyli zmienia się sygnatura metody
+// w ten sposób można zrobić wiele testów do 1 metody za jednym zamachem
+ @ParameterizedTest
+ @MethodSource(value = "testData")
+    void testCalculator(int[] testData ) {
+//        nie ma sensu zapisywać tego w taki sposób
+//        int left = testData[0];
+//        int right = testData[1];
+//        Integer expected = testData[2];
+
+//        tylko tak:
+//   given, when, then
+
+        Assertions.assertEquals(testData[0],calculator.add(testData[1],testData[2] ));
 
     }
-
-//    jak asercja nie przejdzie to drukuje wiadomość failure message
-    private String createMessage(int param){
-        System.out.println("message creation "+ param);
-        return "failure message";
-    }
-
-
-
-    @Test
-    @Disabled("This test is disabled")
-    void testCalculator() {
-//    given
-        String left = "4";
-        String right = "5";
-
-//    then,when
-        Assertions.assertThrows(EnumConstantNotPresentException.class,() ->  calculator.add(left, right)) ;
-
+//w taki sposób ustawiam dane wchodzące
+    public static int[][]testData(){
+         return new int[][] {
+                 {5,2,3},
+                 {10,2,8},
+                 {6,2,4}};
     }
 
     @Test
