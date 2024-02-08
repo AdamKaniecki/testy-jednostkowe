@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--&lt;!&ndash;&ndash;&gt; trzeba dodać logback-test i tu wprowadzić oddzielne ustawienia-->
+
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>[%t] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root  level="info">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
+
