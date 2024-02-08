@@ -1,8 +1,11 @@
 package org.example;
 
+import lombok.extern.slf4j.Slf4j;
+
 public class Calculator {
 
-    public static int add(int left, int right){
+    public int add(int left, int right){
+
         return left + right;
     }
     public static int subtract(int left, int right){

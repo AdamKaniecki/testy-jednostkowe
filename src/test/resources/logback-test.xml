@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!--poprawka ten plik musi być utworzony w module testowym-->
 <!--&lt;!&ndash;&ndash;&gt; trzeba dodać logback-test i tu wprowadzić oddzielne ustawienia-->
 
 <configuration>
